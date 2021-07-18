@@ -1,0 +1,238 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*CSS Reset End*/
+
+
+body {
+    font-family: "微軟正黑體";
+}
+/* 顏色變數 */
+:root {
+    --main-color: #FFD366;
+    --secondary-color: #424242;
+    --idol-color:#86D73E;
+    --over-thin: #31BAF9;
+    --over-fat: #FF982D;
+    --low-fat: #FF6C02;
+    --medium-fat: #d65c04;
+    --high-fat: #FF1200;
+}
+
+
+/*表頭*/
+.header {
+   background-color: var(--secondary-color);;
+   height: 350px;
+}
+.calArea {
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+}
+.calArea .input-group {
+    display: flex;
+    flex-direction: column;
+}
+.calArea .input-group label {
+    font-size: 18px;
+    margin-bottom: 7px;
+    color: var(--main-color);
+}
+.calArea .input-group input {
+    height: 40px;
+    width: 250px;
+    margin-bottom: 5px;
+    font-size: 24px;
+    border-radius: 10px;
+    border-style: none;
+    padding-left: 10px;
+    background-color: rgba(255,255,255,0.18);
+    border: 2px solid var(--main-color);
+    color: #FFFFFF;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ffffff;
+  opacity: 0.5; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #ffffff;
+  opacity:0.5;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #ffffff;
+  opacity:0.5;
+}
+.calArea .input-group input:focus{
+    outline: none;
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.calArea .warning {
+    color:red;
+    text-align: right;
+    font-size: 16px;
+}
+.resultBtnArea {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+}
+.resultBtnArea .btn {
+    width: 120px;
+    height: 120px;
+    border: 0px solid var(--main-color);
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: box-shadow .3s;
+}
+.resultBtnArea .resultBmiValue{
+    font-size: 32px;
+}
+.resultBtnArea .smallText {
+    font-size: 14px;
+    display: none;
+}
+.resultBtnArea .resultBmiStatus {
+    font-size: 32px;
+    margin-left: 18px;
+    position: absolute;
+    display: none;
+    left: 120px;
+    white-space: nowrap;
+}
+.resultBtnArea .effect:hover{
+    cursor: pointer;
+    box-shadow: rgba(255, 196, 49, 0.64)0px 0px 3px 3px;
+}
+.resultBtnArea .effect:active {
+    background-color: #DEA921;
+    box-shadow: 0 0px 0px transparent;
+}
+
+.restartBtn {
+    position: absolute;
+    right:0;
+    top:70%;
+    border-radius: 50%;
+    border: 3px solid var(--secondary-color);
+    transition: all .8s;
+    cursor: pointer;
+    display: none;
+}
+.restartBtn:hover{
+    transform: rotate(360deg);
+}
+
+/*內容*/
+.content {
+    background-color: #F5F5F5;
+    text-align: center;
+    padding: 58px;
+    min-height: calc(100vh - 540px);
+}
+
+.content .bmiRecord {
+    width: 700px;
+    margin: 0 auto;
+}
+.content .bmiRecord h1 {
+    font-size: 24px;
+    margin-bottom: 36px;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+.content .bmiRecord .bmiItem {
+    background-color: #ffffff;
+    padding: 21px;
+    margin-bottom: 16px;
+}
+.content .itemDetail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:var(--secondary-color);
+}
+.content .itemDetail li {
+    display: flex;
+    align-items: center;
+}
+.content .itemDetail .label {
+    font-size: 12px;
+}
+.content .itemDetail .val {
+    font-size: 20px;
+    margin-left: 7px;
+}
+.delete {
+    color:rgba(0,0,0,0.18);
+    transition: color .3s;
+}
+.delete:hover{
+    color:#ff6666;
+    cursor: pointer;
+}
+
+/*表尾*/
+.footer {
+    background-color: var(--main-color);
+    padding: 20px;
+    text-align: center;
+}
+.footer img {
+    width: 55px;
+    height: 55px;
+}

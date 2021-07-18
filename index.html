@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'/>
+  <link rel="stylesheet" href="all.css">
+  <title>六角 BMI 計算器</title>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="header">
+      <div class="calArea">
+        <img src="images/BMICLogo.png" alt="LOGO">
+        <div class="input-group">
+          <label for="height">身高 cm</label>
+          <input id="height" type="text" placeholder="請輸入身高"><small class="warning"></small><br>
+
+          <label for="weight">體重 kg</label>
+          <input id="weight" type="text" placeholder="請輸入體重">
+          <small class="warning"></small>
+        </div>
+        <div class="resultBtnArea">
+          <button class="btn effect">
+            <p class="resultBmiValue">看結果</p>
+            <small class="smallText">BMI</small>
+            <button class="restartBtn" href="#"><img src="images/icons_loop.png" alt="RESTART"></a>
+          </button>
+          <p class="resultBmiStatus">理想</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="bmiRecord">
+        <h1>BMI 紀錄</h1>
+        <ul class="bmiList"></ul>
+      </div>
+    </div>
+
+    <div class="footer">
+      <img src="images/BMICLogo2.png" alt="LOGO">
+    </div>
+  </div>
+
+  <script src="all.js"></script>
+</body>
+</html>
