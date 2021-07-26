@@ -119,7 +119,8 @@ function renderList(){
       </ul>
     </li>`
   });
-  if (data) {
+
+  if (data.length !== 0) {
     str += `<button class="clearAll">清除全部</button>`;
     bmiList.innerHTML = str;
     let itemDetail = document.querySelectorAll('.itemDetail');
