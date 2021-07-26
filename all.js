@@ -5,7 +5,7 @@ let resultBmiStatus = document.querySelector(".resultBmiStatus");
 let restartBtn = document.querySelector(".restartBtn");
 let height = document.querySelector('#height');
 let weight = document.querySelector('#weight');
-
+let bmiList = document.querySelector('.bmiList');
 const data = JSON.parse(localStorage.getItem("record")) || [];
 
 // 顯示結果圓圈圈
@@ -29,7 +29,7 @@ function showResult(color, bmi, status) {
   // 加入重來按鈕和效果
   restartBtn.style.backgroundColor = `${color}`;
   restartBtn.style.display = "block";
-  restartBtn.addEventListener('click', restart, false);
+  restartBtn.addEventListener('click', calBmi, false);
 }
 // 計算bmi + 存進data
 function calBmi(){
@@ -81,30 +81,11 @@ function addRecord(color, bmi, status, weight, height){
     "date":date
   }
   console.log(temp);
-  data.push(temp);
+  data.unshift(temp);
   renderList();
   localStorage.setItem('record',JSON.stringify(data));
-
 }
 
-// 重新輸入
-function restart(){
-  calBmi();
-  // let height = document.querySelector('#height');
-  // let weight = document.querySelector('#weight');
-  // height.value = "";
-  // weight.value = "";
-  // resultBmiStatus.style.display = "none";
-  // resultBmiValue.textContent = "看結果";
-  // smallText.style.display = "none";
-  // restartBtn.style.display = "none";
-  // resultBmiValue.style.margin = "0 0 0 0";
-  // btn.style.border = "5px solid var(--main-color)";
-  // btn.style.color = "var(--secondary-color)";
-  // btn.style.backgroundColor ="var(--main-color)";
-  // btn.classList.add("effect");
-  // btn.style.cursor = "pointer";
-}
 // 判斷結果顯示
 function checkInt(e){
   console.log(e.target.value);
@@ -123,7 +104,6 @@ function isNumber(val) {
 
 // 從data拿資料出來顯示
 function renderList(){
-  let bmiList = document.querySelector('.bmiList');
   str = '';
   data.forEach(function (item,index) {
     console.log(item);
@@ -139,11 +119,15 @@ function renderList(){
       </ul>
     </li>`
   });
-  bmiList.innerHTML = str;
-  let itemDetail = document.querySelectorAll('.itemDetail');
-  itemDetail.forEach(item =>
-      item.addEventListener('click',deleteBmi,false)
-    );
+  if (data) {
+    str += `<button class="clearAll">清除全部</button>`;
+    bmiList.innerHTML = str;
+    let itemDetail = document.querySelectorAll('.itemDetail');
+    itemDetail.forEach(item =>
+        item.addEventListener('click',deleteBmi,false)
+      );
+    clearStorage();
+  }
 }
 
 function deleteBmi(e){
@@ -158,7 +142,18 @@ function deleteBmi(e){
   };
 };
 
+function clearStorage(){
+  let clearAll = document.querySelector(".clearAll");
+  clearAll.addEventListener('click', function(){
+    console.log('clear');
+    bmiList.innerHTML = "";
+    data.length = 0;
+    localStorage.clear();    
+  }, false);
+}
+
 height.addEventListener('blur', checkInt,false);
 weight.addEventListener('blur',checkInt,false);
 btn.addEventListener("click",calBmi,false);
+
 renderList();

@@ -173,6 +173,9 @@ body {
     cursor: pointer;
     display: none;
 }
+.restartBtn img {
+    margin-top: 3px;
+}
 .restartBtn:hover{
     transform: rotate(360deg);
 }
@@ -224,6 +227,27 @@ body {
 .delete:hover{
     color:#ff6666;
     cursor: pointer;
+}
+
+.clearAll {
+    border-radius: 5px;
+    border-style: none;
+    font-size: 18px;
+    padding: 5px 15px;
+    opacity: 0.5;
+    transition: all .35s;
+    border: 1px solid transparent;
+}
+.clearAll:hover{
+    opacity:0.7;
+    color:black;
+    cursor: pointer;
+    box-sizing: content-box;
+    border: 1px solid gray;
+}
+
+.clearAll:active{
+    opacity: 0.5;
 }
 
 /*表尾*/

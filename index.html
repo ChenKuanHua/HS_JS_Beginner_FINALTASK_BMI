@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <meta name='description' content='六角學院,JavaScript學徒的試煉,最終任務,BMI' />
+  <meta property="og:description" content="為您打造就算沒有程式基礎，也能夠逐步學習獲得網頁排版技巧的紮實觀念，六角學院的講師將協助您成就更好的自己！">
+  <meta property="og:image" content="https://www.filepicker.io/api/file/uJHoti8RQ0qGFIXSkmGd">
+  <meta property="og:title" content="JS學徒最終任務-BMI">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://courses.hexschool.com/courses/">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'/>
   <link rel="stylesheet" href="all.css">
   <title>六角 BMI 計算器</title>
@@ -17,7 +24,6 @@
         <div class="input-group">
           <label for="height">身高 cm</label>
           <input id="height" type="text" placeholder="請輸入身高"><small class="warning"></small><br>
-
           <label for="weight">體重 kg</label>
           <input id="weight" type="text" placeholder="請輸入體重">
           <small class="warning"></small>
@@ -26,7 +32,7 @@
           <button class="btn effect">
             <p class="resultBmiValue">看結果</p>
             <small class="smallText">BMI</small>
-            <button class="restartBtn" href="#"><img src="images/icons_loop.png" alt="RESTART"></a>
+            <button class="restartBtn" href="#"><img title="再算一次" src="images/icons_loop.png" alt="RESTART"></a>
           </button>
           <p class="resultBmiStatus">理想</p>
         </div>
@@ -37,6 +43,7 @@
       <div class="bmiRecord">
         <h1>BMI 紀錄</h1>
         <ul class="bmiList"></ul>
+        
       </div>
     </div>
 
