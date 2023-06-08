@@ -57,6 +57,7 @@ function btnReset() {
   //清空input
   height.value = "";
   weight.value = "";
+  height.focus();
 }
 
 
